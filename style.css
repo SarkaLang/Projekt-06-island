@@ -18,13 +18,11 @@ body {
     line-height: 1.6;
 }
 
-.Main {
+.main {
     overflow: scroll;
 }
 
-
 /*Header*/
-
 header {
     background-image: linear-gradient(rgba(0,0,0,0.4) 2%,rgba(0,0,0,0) 100%), url(images/island-hlavicka.jpg);
     background-position: left;
@@ -56,21 +54,24 @@ header {
     text-align: center;
     margin-top: -20px;
     font-style: oblique;
+    position: relative;
 }
 
-hr {
- width: 80px;
- margin-top: 20px;
-}
+.autor::before { 
+    content: " "; 
+    position: absolute; 
+    left: 50%; 
+    top: -100%; 
+    transform: translate(-50%, 0); 
+    width: 100px;
+    border-top: 2px solid white; }
 
 h1 {
     margin-top: 0;
 }
 
-
 /*Menu*/
-
-.menu {
+menu {
     margin: 30px;
 }
 
@@ -93,25 +94,22 @@ a {
     font-family: 'Raleway';
 }
 
-a:hover
- {
+a:hover{
     color: black;
  }
 
 /*Uvod*/
-
-.Uvod {
+.uvod {
     margin-top: 10px;
     margin-bottom: 50px;
 }
 
-.Island,
-.Covidet {
+.island,
+.covidet {
     max-width: 100%;
     height: auto;
     padding-top: 30px;
 }
-
 
 p {
     text-align: left;
@@ -121,7 +119,7 @@ p {
     padding-top: 0;
 }
 
-.Obrazek1 {
+.obrazek1 {
     margin-top: 20px;
 }
 
@@ -140,8 +138,7 @@ p {
 }
 
 /*Proc*/
-
-.Islandd {
+.islandproc {
     padding-top: 3%;
 }
 
@@ -160,8 +157,7 @@ hr.druha {
 }
 
 /*Covidet*/
-
-.Island3 {
+.island3 {
     margin-top: 30px;
 }
 
@@ -175,12 +171,11 @@ strong {
     margin-bottom: 80px;
 }
 
-
 /*Fotografie*/
-
 .foto1 {
     max-width: 100%;
     height: auto;  
+    transition: transform 0.3s ease-in-out;
 }
 
 .galerie {
@@ -213,38 +208,30 @@ strong {
 }
 
 /*footer*/
-
 footer {
     margin-top: 30px;
     padding-right: 60px;
 }
 
-.Paticka {
+.paticka {
     font-size: 11px;
     color:rgb(156, 152, 152);
 }
 
-.Paticka1 {
+.paticka1 {
     text-decoration: underline;
     text-transform: none;
     color:rgb(176, 164, 164);
     font-size: 10px;
 }
 
-
-
 /*Media*/
+@media (min-width:501px){
 
-@media (min-width:501px) and (max-width:1000px) {
-
- .Main {
+ .main {
     display: flex;
     flex-direction: column;
  } 
-
- header {
-    background-position: top;
- }
 
  .titulek {
     font-size: 4em;
@@ -271,15 +258,6 @@ footer {
 
  li.bez2 {
     border-right: none;
- }
-
- .Uvod {
-    margin-bottom: 0;
- }
-
- .Island {
-    width: 100%;
-    height: auto;
  }
 
  .galerie {
@@ -309,7 +287,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     width: 100%;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
 .popisky1 {
@@ -344,19 +322,14 @@ footer {
    transform: scale(1.2);
 }
 
-
 footer {
     padding-left: 6.5%;
     padding: 0;
 }
-
  }
 
  @media (min-width: 1001px) {
-    
-   .Main2 {
-    display: flex;
-    flex-direction: column;
+    .main2 {
     background-color: white;
     margin: 10.4%;
     margin-top: -5%;
@@ -381,7 +354,7 @@ footer {
     font-size: 1.4em;
    }
 
-   .MenuUvod {
+   .menuUvod {
     display: flex;
     padding: 4%;
     padding-right: 0;
@@ -390,13 +363,15 @@ footer {
 
    li {
     text-align: left;
+    border: hidden;
    }
 
    .menu {
+    flex-direction: column;
     margin: 0;
    }
 
-  .Menicko {
+  .menicko {
     width: 20%;
     height: auto;
     margin: 3%;
@@ -413,7 +388,7 @@ footer {
     font-size: 36px;
   }
 
-  .Uvod {
+  .uvod {
     width: 80%;
     margin-bottom: 0;
     padding-right: 2%;
@@ -422,12 +397,6 @@ footer {
   p {
     font-size: 1.2em;
   }
-
- .Island {
-    width: 100%;
-    height: auto;
- }
-
 
  .leva {
     width: 80%;
@@ -439,11 +408,11 @@ footer {
    padding-right: 6%;
  }
 
- .Zmena {
+ .zmena {
     margin-bottom: 5%;
  }
 
- .Jiny {
+ .jiny {
     padding-left: 18%;
  }
 
@@ -451,17 +420,10 @@ footer {
     margin-left: 0;
  }
 
- .galerie {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
- }
-
  .foto {
     width: calc(100% / 3);
     position: relative;
-    display: flex;
+    overflow: hidden;
  }
 
  .popisek1 {
@@ -477,16 +439,8 @@ footer {
 
  a.popisky {
     color: white;
-     text-decoration: underline;
  }
 
- .popisek {
-    position: absolute;
- }
-.foto {
-    position: relative;
-    overflow: hidden;
-}
 .popisek2 {
     color: white;
 }
@@ -497,27 +451,17 @@ footer {
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     width: 100%;
-    transition: transform 0.3s;
 }
-
-.foto:hover .popisek {
-    transform: translateY(-100%);
-}
-
-.foto:hover img {
-   transform: scale(1.2);
-}
-
 .popisky1 {
     text-transform: none;
     color: rgb(246, 241, 241);
     text-decoration: underline;
     font-size: 10px;
 }
-
 footer {
     padding-left: 9%;
 }
  }
+ 
 
 
