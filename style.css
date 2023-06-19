@@ -227,7 +227,6 @@ footer {
 
 /*Media*/
 @media (min-width:501px){
-
  .main {
     display: flex;
     flex-direction: column;
@@ -271,12 +270,9 @@ footer {
     width: calc(100% / 2);
     position: relative;
     display: flex;
+     overflow: hidden;
  }
 
-.foto {
-    position: relative;
-    overflow: hidden;
-}
 .popisek2 {
     color: white;
 }
@@ -354,7 +350,7 @@ footer {
     font-size: 1.4em;
    }
 
-   .menuUvod {
+   .uvodnimenu {
     display: flex;
     padding: 4%;
     padding-right: 0;
@@ -422,8 +418,6 @@ footer {
 
  .foto {
     width: calc(100% / 3);
-    position: relative;
-    overflow: hidden;
  }
 
  .popisek1 {
@@ -445,18 +439,9 @@ footer {
     color: white;
 }
 .popisek {
-    position: absolute;
     top: 105%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    width: 100%;
-}
-.popisky1 {
-    text-transform: none;
-    color: rgb(246, 241, 241);
-    text-decoration: underline;
-    font-size: 10px;
 }
 footer {
     padding-left: 9%;
